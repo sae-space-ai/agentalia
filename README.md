@@ -1,41 +1,45 @@
 # Agentalia Agents Dashboard
 
-Dashboard de Agentalia completamente implementado y funcional.
+Dashboard de agentes de Agentalia completamente implementado con tema claro y diseño moderno.
 
 ## Componentes principales
 
-- `AgentsGrid.tsx` — Grid de agentes con estadísticas, filtros y tarjetas expandibles.
-- `Header.tsx` — Barra superior con búsqueda, notificaciones y botón "New Agent".
-- `MaestroChat.tsx` — Interfaz de chat con el orquestador.
-- `Sidebar.tsx` — Navegación lateral con enlaces del workspace y perfil de usuario.
-- `App.tsx` — Componente principal con routing entre vistas.
-- `index.css` — Estilos personalizados con tema oscuro.
+- `Header.tsx` — Barra superior con título "Tus agentes" y badge de estado.
+- `QuickAccessGrid.tsx` — Grid de 6 tarjetas de acceso rápido (Tareas, Objetivos, Rutinas, Archivos, Apps, Contactos).
+- `TeamOrbit.tsx` — Visualización orbital del equipo con iconos de agentes en órbitas concéntricas.
+- `AgentsList.tsx` — Lista de agentes con avatares, roles y sección especial del Maestro.
+- `App.tsx` — Componente principal que integra todos los elementos.
+- `agents.ts` — Datos tipados de agentes y elementos de acceso rápido.
 
 ## Características implementadas
 
-- ✅ Navegación lateral con enlaces del workspace, configuración y perfil de usuario
-- ✅ Header con búsqueda, notificaciones y botón "New Agent"
-- ✅ Dashboard de agentes con estadísticas, pestañas de filtro y tarjetas expandibles
-- ✅ Interfaz de chat Maestro con historial de mensajes y acciones rápidas
-- ✅ Vista de métricas con análisis de negocio y rendimiento de agentes
-- ✅ Tema oscuro con gradientes púrpura/azul
-- ✅ Diseño totalmente responsive e interactivo
+- ✅ Tema claro con fondo blanco/gris suave (#F8F9FA)
+- ✅ Header con título grande y badge de estado con acento verde
+- ✅ Grid de acceso rápido con 6 tarjetas interactivas
+- ✅ Visualización orbital del equipo con iconos de agentes
+- ✅ Lista de agentes con avatares circulares y badges de roles
+- ✅ Sección especial del Maestro con descripción y botón destacado
+- ✅ Tarjeta de "Conocimiento del agente" en la parte inferior
+- ✅ Diseño totalmente responsive (mobile, tablet, desktop)
+- ✅ Iconos de lucide-react con estilo lineal
+- ✅ Bordes redondeados, sombras sutiles y transiciones suaves
+- ✅ Hover effects en todas las tarjetas interactivas
 
-## Estado del proyecto
+## Estructura del proyecto
 
-El proyecto compila correctamente y no contiene ninguna referencia a las marcas originales.
-
-## Registro de herramientas de código
-
-| Archivo           | Cambios |
-|-------------------|---------|
-| `AgentsGrid.tsx`  | +343 -0 |
-| `Header.tsx`      | +74 -0  |
-| `MaestroChat.tsx` | +210 -0 |
-| `Sidebar.tsx`     | +111 -0 |
-| `index.html`      | +5 -5   |
-| `App.tsx`         | +92 -1  |
-| `index.css`       | +40 -0  |
+```
+src/
+├── components/
+│   ├── Header.tsx
+│   ├── QuickAccessGrid.tsx
+│   ├── TeamOrbit.tsx
+│   └── AgentsList.tsx
+├── data/
+│   └── agents.ts
+├── App.tsx
+├── main.tsx
+└── index.css
+```
 
 ## Instalación
 
@@ -52,7 +56,23 @@ npm run build
 
 ## Tecnologías
 
-- React
+- React 18
 - TypeScript
-- Tailwind CSS
 - Vite
+- Tailwind CSS
+- lucide-react (iconos)
+
+## Agentes incluidos
+
+- **Valeria** — Agente de Contenido Curioso
+- **Lucía** — Agente de Investigación
+- **Elena** — Agente de Éxito Multicanal
+- **Carmen** — Agente de Comunicación
+- **Daniel** — Agente de Análisis Financiero
+- **The Maestro** — Orquestador de agentes
+
+## Estado del proyecto
+
+✅ El proyecto compila correctamente
+✅ Sin referencias a marcas originales
+✅ "Agentalia" aparece correctamente en todo el proyecto
