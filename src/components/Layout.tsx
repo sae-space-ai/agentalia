@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   Home, Users, CheckCircle, Target, Zap, FileText, 
   Grid3X3, Settings, Search, Moon, Sun, Bell, Command,
-  Lightbulb
+  Lightbulb, Shield
 } from 'lucide-react';
 import { useAppStore } from '../store/appStore';
 import CommandPalette from './CommandPalette';
@@ -19,6 +19,7 @@ export default function Layout() {
     { to: '/tasks', icon: CheckCircle, label: 'Tareas' },
     { to: '/objectives', icon: Target, label: 'Objetivos' },
     { to: '/routines', icon: Zap, label: 'Rutinas' },
+    { to: '/compliance', icon: Shield, label: 'Cumplimiento' },
     { to: '/files', icon: FileText, label: 'Archivos' },
     { to: '/apps', icon: Grid3X3, label: 'Apps' },
   ];

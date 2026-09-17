@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, TrendingUp, Zap, FileText, Grid3x3, Users, ChevronRight, Lightbulb, Bot } from 'lucide-react';
 import { useAppStore } from '../store/appStore';
 import OrbitalVisualization from '../components/OrbitalVisualization';
+import AgentForm from '../components/AgentForm';
 
 export default function DashboardPage() {
   const navigate = useNavigate();
   const { agents, tasks, objectives, routines, files, contacts, apps } = useAppStore();
+  const [showAgentForm, setShowAgentForm] = useState(false);
 
   const activeAgents = agents.filter(a => a.status === 'active' || a.status === 'processing').length;
   const pendingTasks = tasks.filter(t => t.status === 'pending' || t.status === 'in-progress').length;
@@ -91,7 +94,10 @@ export default function DashboardPage() {
             <h2 className="text-xl font-bold text-white">Tu equipo · {agents.length}</h2>
             <div className="flex items-center gap-3">
               <span className="text-sm text-gray-400">{activeAgents} habilitados</span>
-              <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium rounded-lg hover:from-cyan-400 hover:to-purple-400 transition-all glow-cyan">
+              <button 
+                onClick={() => setShowAgentForm(true)}
+                className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium rounded-lg hover:from-cyan-400 hover:to-purple-400 transition-all glow-cyan"
+              >
                 + Añadir agente
               </button>
             </div>
@@ -152,6 +158,11 @@ export default function DashboardPage() {
           <ChevronRight className="w-5 h-5 text-gray-500 group-hover:text-cyan-400 transition-colors" />
         </div>
       </motion.div>
+
+      <AgentForm
+        isOpen={showAgentForm}
+        onClose={() => setShowAgentForm(false)}
+      />
     </div>
   );
 }

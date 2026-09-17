@@ -25,6 +25,30 @@ export const routines: Routine[] = [
     nextRun: '2024-01-22T08:00:00Z',
     createdAt: '2024-01-02T00:00:00Z',
   },
+  {
+    id: 'routine-3',
+    name: 'Monitoreo diario de cumplimiento AI Act',
+    description: 'Verificación automática diaria de cumplimiento con requisitos del AI Act. Escaneo de sistemas de IA, verificación de documentación y detección de desviaciones.',
+    frequency: 'daily',
+    schedule: '06:00',
+    assignedTo: 'guardian',
+    isActive: true,
+    lastRun: '2024-01-17T06:00:00Z',
+    nextRun: '2024-01-18T06:00:00Z',
+    createdAt: '2024-01-07T00:00:00Z',
+  },
+  {
+    id: 'routine-4',
+    name: 'Auditoría semanal de protección de datos',
+    description: 'Auditoría automatizada semanal de cumplimiento RGPD. Verificación de registros de tratamiento, consentimiento, derechos ARCO y medidas de seguridad.',
+    frequency: 'weekly',
+    schedule: 'Friday 10:00',
+    assignedTo: 'guardian',
+    isActive: true,
+    lastRun: '2024-01-12T10:00:00Z',
+    nextRun: '2024-01-19T10:00:00Z',
+    createdAt: '2024-01-07T00:00:00Z',
+  },
 ];
 
 export const getRoutinesByAgent = (agentId: string): Routine[] => {

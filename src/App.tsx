@@ -9,6 +9,7 @@ import FilesPage from './pages/FilesPage';
 import AppsPage from './pages/AppsPage';
 import SettingsPage from './pages/SettingsPage';
 import SkillsPage from './pages/SkillsPage';
+import CompliancePage from './pages/CompliancePage';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="skills" element={<SkillsPage />} />
           <Route path="files" element={<FilesPage />} />
           <Route path="apps" element={<AppsPage />} />
+          <Route path="compliance" element={<CompliancePage />} />
           <Route path="settings" element={<SettingsPage />} />
         </Route>
       </Routes>

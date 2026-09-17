@@ -1,5 +1,6 @@
 import { Settings, Moon, Sun, Bell, Shield, Database } from 'lucide-react';
 import { useAppStore } from '../store/appStore';
+import { toast } from 'sonner';
 
 export default function SettingsPage() {
   const { theme, toggleTheme } = useAppStore();
@@ -91,13 +92,62 @@ export default function SettingsPage() {
           </div>
           
           <div className="space-y-3">
-            <button className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-white/5 rounded-lg transition-all">
+            <button 
+              onClick={() => {
+                const data = localStorage.getItem('agentalia-storage');
+                if (data) {
+                  const blob = new Blob([data], { type: 'application/json' });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = `agentalia-backup-${new Date().toISOString().split('T')[0]}.json`;
+                  a.click();
+                  URL.revokeObjectURL(url);
+                  toast.success('Datos exportados correctamente');
+                }
+              }}
+              className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-white/5 rounded-lg transition-all"
+            >
               Exportar datos
             </button>
-            <button className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-white/5 rounded-lg transition-all">
+            <button 
+              onClick={() => {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'application/json';
+                input.onchange = (e) => {
+                  const file = (e.target as HTMLInputElement).files?.[0];
+                  if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                      try {
+                        const data = JSON.parse(e.target?.result as string);
+                        localStorage.setItem('agentalia-storage', JSON.stringify(data));
+                        toast.success('Datos importados correctamente. Recargando...');
+                        setTimeout(() => window.location.reload(), 1500);
+                      } catch (error) {
+                        toast.error('Error al importar datos: archivo inválido');
+                      }
+                    };
+                    reader.readAsText(file);
+                  }
+                };
+                input.click();
+              }}
+              className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-white/5 rounded-lg transition-all"
+            >
               Importar datos
             </button>
-            <button className="w-full px-4 py-2 text-left text-sm text-red-400 hover:bg-red-500/10 rounded-lg transition-all">
+            <button 
+              onClick={() => {
+                if (window.confirm('¿Estás seguro de que quieres eliminar TODOS los datos? Esta acción no se puede deshacer.')) {
+                  localStorage.removeItem('agentalia-storage');
+                  toast.success('Todos los datos han sido eliminados. Recargando...');
+                  setTimeout(() => window.location.reload(), 1500);
+                }
+              }}
+              className="w-full px-4 py-2 text-left text-sm text-red-400 hover:bg-red-500/10 rounded-lg transition-all"
+            >
               Eliminar todos los datos
             </button>
           </div>

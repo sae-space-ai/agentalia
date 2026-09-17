@@ -89,6 +89,22 @@ export const agents: Agent[] = [
     createdAt: '2024-01-06T00:00:00Z',
     lastActive: new Date().toISOString(),
   },
+  {
+    id: 'guardian',
+    name: 'Agentalia Guardian',
+    role: 'Sovereign Regulatory Compliance Agent',
+    avatar: '🛡️',
+    color: 'from-emerald-500 to-teal-600',
+    glowColor: 'green',
+    status: 'active',
+    description: 'Guardian es el agente soberano especializado en cumplimiento normativo de la UE. Monitorea continuamente el cumplimiento del AI Act y RGPD, realiza auditorías automatizadas, genera informes de conformidad y alerta sobre riesgos de sanciones antes de que ocurran.',
+    skills: ['ai-act-compliance', 'rgpd-audit', 'risk-assessment', 'regulatory-monitoring', 'sanction-prevention', 'data-protection'],
+    tasks: ['task-7', 'task-8', 'task-9'],
+    objectives: ['obj-4', 'obj-5'],
+    routines: ['routine-3', 'routine-4'],
+    createdAt: '2024-01-07T00:00:00Z',
+    lastActive: new Date().toISOString(),
+  },
 ];
 
 export const getAgentById = (id: string): Agent | undefined => {
