@@ -38,8 +38,8 @@ export default function Sidebar({ activeView, setActiveView, isOpen }: SidebarPr
         </div>
         {isOpen && (
           <div className="flex flex-col">
-            <span className="font-semibold text-sm">Symphony</span>
-            <span className="text-[10px] text-gray-500">by Wix</span>
+            <span className="font-semibold text-sm">Agentalia</span>
+            <span className="text-[10px] text-gray-500">AI Platform</span>
           </div>
         )}
       </div>
