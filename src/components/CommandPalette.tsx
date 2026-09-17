@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, Zap, FileText, Users, Settings, Home, Target, Briefcase } from 'lucide-react';
+import { Search, X, Zap, FileText, Users, Settings, Home, Target, Briefcase, Shield } from 'lucide-react';
 import { useAppStore } from '../store/appStore';
 
 export default function CommandPalette() {
@@ -15,6 +15,7 @@ export default function CommandPalette() {
     { id: 'agents', label: 'Ver Agentes', icon: <Users className="w-4 h-4" />, action: () => navigate('/agents'), category: 'Navegación' },
     { id: 'tasks', label: 'Ver Tareas', icon: <Zap className="w-4 h-4" />, action: () => navigate('/tasks'), category: 'Navegación' },
     { id: 'objectives', label: 'Ver Objetivos', icon: <Target className="w-4 h-4" />, action: () => navigate('/objectives'), category: 'Navegación' },
+    { id: 'compliance', label: 'Ver Cumplimiento UE', icon: <Shield className="w-4 h-4" />, action: () => navigate('/compliance'), category: 'Navegación' },
     { id: 'files', label: 'Ver Archivos', icon: <FileText className="w-4 h-4" />, action: () => navigate('/files'), category: 'Navegación' },
     { id: 'apps', label: 'Ver Apps', icon: <Briefcase className="w-4 h-4" />, action: () => navigate('/apps'), category: 'Navegación' },
     { id: 'settings', label: 'Configuración', icon: <Settings className="w-4 h-4" />, action: () => navigate('/settings'), category: 'Navegación' },
