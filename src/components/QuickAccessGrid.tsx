@@ -8,18 +8,17 @@ import {
   ChevronRight,
   Lightbulb,
 } from 'lucide-react';
-import { getPendingTasksCount } from '../data/tasks';
-import { getObjectivesCount } from '../data/objectives';
-import { getActiveRoutinesCount } from '../data/routines';
-import { getFilesCount, getContactsCount, getAppsCount } from '../data/entities';
+import { useAppStore } from '../store/appStore';
 
 export default function QuickAccessGrid() {
-  const pendingTasks = getPendingTasksCount();
-  const objectivesCount = getObjectivesCount();
-  const activeRoutines = getActiveRoutinesCount();
-  const filesCount = getFilesCount();
-  const contactsCount = getContactsCount();
-  const appsCount = getAppsCount();
+  const { tasks, objectives, routines, files, contacts, apps } = useAppStore();
+  
+  const pendingTasks = tasks.filter(t => t.status === 'pending' || t.status === 'in-progress').length;
+  const objectivesCount = objectives.length;
+  const activeRoutines = routines.filter(r => r.isActive).length;
+  const filesCount = files.length;
+  const contactsCount = contacts.length;
+  const appsCount = apps.length;
 
   const quickAccessItems = [
     {

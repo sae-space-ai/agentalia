@@ -1,6 +1,7 @@
-import { agents } from '../data/agents';
+import { useAppStore } from '../store/appStore';
 
 export default function TeamOrbit() {
+  const { agents } = useAppStore();
   const regularAgents = agents.filter(a => !a.isOrchestrator);
   const enabledCount = 14;
 

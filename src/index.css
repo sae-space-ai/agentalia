@@ -8,8 +8,6 @@
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-    background-color: #f8f9fa;
-    color: #111827;
   }
 
   ::-webkit-scrollbar {
@@ -18,7 +16,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -28,5 +26,13 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: #a8a8a8;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #5a5a5a;
   }
 }

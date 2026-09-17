@@ -1,7 +1,8 @@
 import { ChevronDown } from 'lucide-react';
-import { agents } from '../data/agents';
+import { useAppStore } from '../store/appStore';
 
 export default function AgentsList() {
+  const { agents } = useAppStore();
   const regularAgents = agents.filter((a) => !a.isOrchestrator);
   const maestro = agents.find((a) => a.isOrchestrator);
 
