@@ -5,10 +5,10 @@ import AgentsPage from './pages/AgentsPage';
 import TasksPage from './pages/TasksPage';
 import ObjectivesPage from './pages/ObjectivesPage';
 import RoutinesPage from './pages/RoutinesPage';
-import SkillsPage from './pages/SkillsPage';
 import FilesPage from './pages/FilesPage';
 import AppsPage from './pages/AppsPage';
 import SettingsPage from './pages/SettingsPage';
+import SkillsPage from './pages/SkillsPage';
 
 export default function App() {
   return (
