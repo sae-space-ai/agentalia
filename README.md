@@ -1,165 +1,187 @@
-# Agentalia Agents Dashboard
+# Agentalia - AI Agent Platform
 
-Dashboard completo de agentes de Agentalia con tema claro, base de datos interna extensible y diseño responsive.
+Dashboard futurista de agentes de IA con diseño cyberpunk, funcionalidad CRUD completa, y base de datos interna mutable con persistencia.
 
-## 📋 Tabla de Contenidos
+## 🚀 Características Implementadas
 
-- [Características](#características)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Base de Datos Interna](#base-de-datos-interna)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Extensión del Catálogo](#extensión-del-catálogo)
-- [Tecnologías](#tecnologías)
+### Diseño Futurista Cyberpunk
+- ✅ **Tema oscuro por defecto** con acentos neón (cyan, purple, pink)
+- ✅ **Glassmorphism** en todas las tarjetas y paneles
+- ✅ **Efectos de brillo** (glow effects) en elementos interactivos
+- ✅ **Visualización orbital animada** con agentes en órbita
+- ✅ **Animaciones fluidas** con Framer Motion
+- ✅ **Tipografía moderna** con efectos de texto brillante
+- ✅ **Grid de fondo** estilo cyberpunk
+- ✅ **Partículas flotantes** en la visualización orbital
 
-## ✨ Características
+### Funcionalidad CRUD Completa
+- ✅ **Crear, Leer, Actualizar, Eliminar** para todas las entidades
+- ✅ **Tareas** - Crear, editar, eliminar, cambiar estado
+- ✅ **Agentes** - Catálogo extensible con roles futuristas
+- ✅ **Objetivos** - Seguimiento con progreso y resultados clave
+- ✅ **Rutinas** - Automatizaciones programadas
+- ✅ **Archivos** - Gestión de documentos
+- ✅ **Apps** - Aplicaciones creadas por agentes
+- ✅ **Contactos** - Base de datos de contactos
+- ✅ **Habilidades** - Skills de agentes
 
-### Diseño Visual
-- ✅ **Tema claro** con fondo #F8F9FA y tarjetas blancas
-- ✅ **Header** con título "Tus agentes" y badge de estado verde
-- ✅ **Grid de acceso rápido** con 6 tarjetas interactivas conectadas a la base de datos
-- ✅ **Visualización orbital** del equipo con iconos de agentes
-- ✅ **Lista de agentes** con avatares circulares y badges de roles
-- ✅ **Sección del Maestro** con descripción y botón destacado
-- ✅ **Tarjeta de conocimiento** en la parte inferior
-- ✅ **Diseño responsive** (mobile, tablet, desktop)
-- ✅ **Hover effects** y transiciones suaves
+### Base de Datos Interna
+- ✅ **Zustand con persistencia** en localStorage
+- ✅ **Datos mutables** - Todos los cambios persisten al recargar
+- ✅ **11 entidades tipadas** con TypeScript
+- ✅ **Relaciones entre entidades** (agentes ↔ tareas ↔ objetivos)
+- ✅ **Funciones de consulta** para filtrar y buscar
 
-### Funcionalidades
-- ✅ Base de datos interna con múltiples entidades tipadas
-- ✅ Catálogo de agentes extensible
-- ✅ Conexión entre entidades (agentes ↔ tareas ↔ objetivos ↔ rutinas)
-- ✅ Contadores dinámicos basados en datos reales
-- ✅ TypeScript completo con interfaces para todas las entidades
+### Nuevos Agentes Futuristas
+1. **Agentalia Nexus** - Neural Orchestrator ⚡
+2. **Agentalia Cortex** - Quantum Data Analyst 🧠
+3. **Agentalia Aether** - Cyber Communications Specialist 🌐
+4. **Agentalia Vanguard** - Autonomous Growth Hacker 🚀
+5. **Agentalia Oracle** - Predictive Intelligence Engine 🔮
+6. **Agentalia Synapse** - Neural Content Generator ✨
+
+### Routing Completo
+- ✅ **9 vistas funcionales** con React Router
+- ✅ **Dashboard** - Vista principal con orbital visualization
+- ✅ **Agentes** - Lista y detalle de agentes
+- ✅ **Tareas** - CRUD completo de tareas
+- ✅ **Objetivos** - Seguimiento de objetivos
+- ✅ **Rutinas** - Automatizaciones
+- ✅ **Archivos** - Gestión de documentos
+- ✅ **Apps** - Aplicaciones de agentes
+- ✅ **Configuración** - Ajustes del sistema
+
+### Command Palette (⌘K)
+- ✅ **Búsqueda global** en toda la base de datos
+- ✅ **Navegación rápida** con teclado
+- ✅ **Fuzzy search** en agentes, tareas, comandos
+- ✅ **Atajos de teclado** (↑↓ navegar, ↵ seleccionar, esc cerrar)
+
+### Theme Toggle
+- ✅ **Tema claro/oscuro** con toggle
+- ✅ **Persistencia** en localStorage
+- ✅ **Transiciones suaves** entre temas
+- ✅ **Clases de Tailwind** para dark mode
+
+### Notificaciones
+- ✅ **Sonner** para toast notifications
+- ✅ **Feedback inmediato** en acciones CRUD
+- ✅ **Temas adaptados** al modo claro/oscuro
+- ✅ **Posicionamiento configurable**
+
+### Animaciones Avanzadas
+- ✅ **Framer Motion** para transiciones de página
+- ✅ **Stagger animations** en listas
+- ✅ **Hover effects** en todas las tarjetas
+- ✅ **Orbital visualization** con animaciones CSS
+- ✅ **Partículas flotantes** con animaciones
+- ✅ **Pulse effects** en elementos activos
+
+### Preparación para Vercel
+- ✅ **vercel.json** configurado
+- ✅ **.vercelignore** optimizado
+- ✅ **.env.example** con variables
+- ✅ **SPA routing** con rewrites
+- ✅ **Build optimizado** para producción
 
 ## 📁 Estructura del Proyecto
 
 ```
 src/
 ├── components/
-│   ├── Header.tsx              # Barra superior con título y badges
-│   ├── QuickAccessGrid.tsx     # 6 tarjetas de acceso rápido + KnowledgeCard
-│   ├── TeamOrbit.tsx           # Visualización orbital del equipo
-│   └── AgentsList.tsx          # Lista de agentes con sección del Maestro
+│   ├── Layout.tsx                    # Layout principal con sidebar
+│   ├── CommandPalette.tsx            # ⌘K command palette
+│   └── OrbitalVisualization.tsx      # Visualización orbital animada
+├── pages/
+│   ├── DashboardPage.tsx             # Dashboard principal
+│   ├── AgentsPage.tsx                # Lista de agentes
+│   ├── TasksPage.tsx                 # CRUD de tareas
+│   ├── ObjectivesPage.tsx            # Objetivos
+│   ├── RoutinesPage.tsx              # Rutinas
+│   ├── FilesPage.tsx                 # Archivos
+│   ├── AppsPage.tsx                  # Apps
+│   └── SettingsPage.tsx              # Configuración
 ├── data/
-│   ├── schema.ts               # Interfaces TypeScript para todas las entidades
-│   ├── agents.ts               # Catálogo de agentes
-│   ├── tasks.ts                # Tareas asignadas a agentes
-│   ├── objectives.ts           # Objetivos de agentes
-│   ├── routines.ts             # Rutinas automatizadas
-│   ├── skills.ts               # Habilidades de agentes
-│   └── entities.ts             # Otras entidades (complements, automations, etc.)
-├── App.tsx                     # Componente principal
-├── main.tsx                    # Entry point
-└── index.css                   # Estilos globales con tema claro
+│   ├── schema.ts                     # Interfaces TypeScript
+│   ├── agents.ts                     # 6 agentes futuristas
+│   ├── tasks.ts                      # 6 tareas
+│   ├── objectives.ts                 # 3 objetivos
+│   ├── routines.ts                   # 2 rutinas
+│   ├── skills.ts                     # 7 habilidades
+│   └── entities.ts                   # Otras entidades
+├── store/
+│   └── appStore.ts                   # Zustand store con persistencia
+├── App.tsx                           # Router principal
+├── main.tsx                          # Entry point
+└── index.css                         # Estilos cyberpunk
 ```
 
 ## 🗄️ Base de Datos Interna
 
-### Esquema de Datos
+### Entidades Implementadas
+- **Agent** - Agentes con roles, habilidades, tareas, objetivos
+- **Task** - Tareas con estado, prioridad, fechas, asignación
+- **Objective** - Objetivos con progreso y resultados clave
+- **Routine** - Rutinas con frecuencia y horarios
+- **Skill** - Habilidades de agentes
+- **Complement** - Integraciones
+- **Automation** - Automatizaciones
+- **Utility** - Herramientas
+- **File** - Archivos
+- **Contact** - Contactos
+- **App** - Aplicaciones
 
-El sistema utiliza una base de datos interna basada en TypeScript con las siguientes entidades:
-
-#### Agent
+### Operaciones CRUD
 ```typescript
-interface Agent {
-  id: string;
-  name: string;
-  role: string;
-  avatar: string;
-  color: string;
-  description?: string;
-  status: 'active' | 'idle' | 'processing';
-  isOrchestrator?: boolean;
-  skills?: string[];
-  tasks?: string[];
-  objectives?: string[];
-  routines?: string[];
-  complements?: string[];
-  automations?: string[];
-  utilities?: string[];
-}
+// Agregar tarea
+addTask({ id: 'task-1', title: 'Nueva tarea', ... })
+
+// Actualizar tarea
+updateTask('task-1', { status: 'completed' })
+
+// Eliminar tarea
+deleteTask('task-1')
+
+// Todas las entidades tienen operaciones similares
 ```
 
-#### Task
-```typescript
-interface Task {
-  id: string;
-  title: string;
-  description: string;
-  status: 'pending' | 'in-progress' | 'completed' | 'cancelled';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
-  assignedTo: string; // Agent ID
-  createdAt: string;
-  dueDate?: string;
-  completedAt?: string;
-}
-```
+### Persistencia
+- ✅ **localStorage** automático con Zustand persist
+- ✅ **Datos sobreviven** al recargar la página
+- ✅ **Estado completo** se guarda (agentes, tareas, tema, etc.)
 
-#### Objective
-```typescript
-interface Objective {
-  id: string;
-  title: string;
-  description: string;
-  status: 'not-started' | 'in-progress' | 'completed';
-  targetDate?: string;
-  progress: number; // 0-100
-  assignedTo: string; // Agent ID
-  keyResults?: string[];
-}
-```
+## 🎨 Diseño Visual
 
-#### Routine
-```typescript
-interface Routine {
-  id: string;
-  name: string;
-  description: string;
-  frequency: 'daily' | 'weekly' | 'monthly' | 'custom';
-  schedule?: string;
-  assignedTo: string; // Agent ID
-  isActive: boolean;
-  lastRun?: string;
-  nextRun?: string;
-}
-```
+### Paleta de Colores
+- **Fondo**: `#0a0a0f` (negro profundo)
+- **Glass**: `rgba(255, 255, 255, 0.05)` con backdrop blur
+- **Cyan**: `#06b6d4` (acento principal)
+- **Purple**: `#a855f7` (acento secundario)
+- **Pink**: `#ec4899` (acento terciario)
+- **Green**: `#22c55e` (estados activos)
 
-#### Skill
-```typescript
-interface Skill {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  availableTo: string[]; // Agent IDs
-  isEnabled: boolean;
-}
-```
+### Efectos Especiales
+- **Glow effects** en botones y elementos interactivos
+- **Text glow** en títulos principales
+- **Border glow** en hover
+- **Backdrop blur** en tarjetas (glassmorphism)
+- **Gradient borders** en elementos activos
+- **Pulse animations** en indicadores de estado
 
-### Entidades Adicionales
+### Tipografía
+- **Inter** para texto general
+- **Font weights**: 400 (normal), 500 (medium), 600 (semibold), 700 (bold)
+- **Text shadows** para efectos de brillo
 
-- **Complement**: Integraciones y extensiones
-- **Automation**: Automatizaciones con triggers y acciones
-- **Utility**: Herramientas y recursos
-- **File**: Archivos gestionados por agentes
-- **Contact**: Contactos con los que interactúan los agentes
-- **App**: Aplicaciones creadas por agentes
+## 🚀 Instalación y Uso
 
-### Relaciones entre Entidades
-
-Los agentes están conectados con otras entidades mediante IDs:
-- Un agente puede tener múltiples tareas, objetivos, rutinas
-- Las tareas están asignadas a un agente específico
-- Los objetivos tienen un agente responsable
-- Las rutinas están vinculadas a un agente
-- Las habilidades están disponibles para uno o más agentes
-
-## 🚀 Instalación
-
+### Desarrollo Local
 ```bash
 # Instalar dependencias
 npm install
+
+# Copiar variables de entorno
+cp .env.example .env.local
 
 # Ejecutar en modo desarrollo
 npm run dev
@@ -167,150 +189,86 @@ npm run dev
 # Compilar para producción
 npm run build
 
-# Vista previa de la compilación
+# Vista previa de producción
 npm run preview
 ```
 
-## 📖 Uso
+### Deploy en Vercel
+1. Conectar repositorio GitHub a Vercel
+2. Framework preset: **Vite**
+3. Build command: `npm run build`
+4. Output directory: `dist`
+5. Deploy automático
 
-### Agentes Incluidos
-
-1. **Valeria** — Agente de Contenido Curioso
-   - Habilidades: Creación de contenido, copywriting, redes sociales
-   - Tareas activas: 2
-
-2. **Lucía** — Agente de Investigación
-   - Habilidades: Investigación, análisis de datos, investigación de mercado
-   - Tareas activas: 1
-
-3. **Elena** — Agente de Éxito Multicanal
-   - Habilidades: Multicanal, éxito del cliente, gestión de campañas
-   - Tareas activas: 2
-
-4. **Carmen** — Agente de Comunicación
-   - Habilidades: Comunicación, email marketing, mensajería
-   - Tareas activas: 1
-
-5. **Daniel** — Agente de Análisis Financiero
-   - Habilidades: Análisis financiero, reportes, presupuestación
-   - Objetivos: 1
-
-6. **The Maestro** — Orquestador de agentes
-   - Coordina todos los agentes
-   - Aprovecha la experiencia de Agentalia para optimizar el negocio
-
-### Funciones de Consulta
-
-Cada archivo de datos exporta funciones útiles:
-
-```typescript
-// Obtener agente por ID
-const agent = getAgentById('valeria');
-
-// Obtener agentes por estado
-const activeAgents = getAgentsByStatus('active');
-
-// Obtener tareas de un agente
-const valeriaTasks = getTasksByAgent('valeria');
-
-// Contar tareas pendientes
-const pendingCount = getPendingTasksCount();
-
-// Obtener objetivos de un agente
-const objectives = getObjectivesByAgent('valeria');
-
-// Obtener rutinas activas
-const activeRoutines = getActiveRoutinesCount();
-```
-
-## 🔧 Extensión del Catálogo
-
-### Añadir un Nuevo Agente
-
-1. Abre `src/data/agents.ts`
-2. Añade un nuevo objeto al array `agents`:
-
-```typescript
-{
-  id: 'nuevo-agente',
-  name: 'Nombre del Agente',
-  role: 'Rol del Agente',
-  avatar: '🎯',
-  color: 'bg-blue-100 text-blue-600',
-  status: 'active',
-  skills: ['skill-1', 'skill-2'],
-  tasks: [],
-  objectives: [],
-  routines: [],
-}
-```
-
-### Añadir Nuevas Tareas
-
-1. Abre `src/data/tasks.ts`
-2. Añade un nuevo objeto al array `tasks`:
-
-```typescript
-{
-  id: 'task-nuevo',
-  title: 'Nueva tarea',
-  description: 'Descripción de la tarea',
-  status: 'pending',
-  priority: 'medium',
-  assignedTo: 'valeria', // ID del agente
-  createdAt: new Date().toISOString(),
-  dueDate: '2024-02-01T18:00:00Z',
-}
-```
-
-### Añadir Nuevas Habilidades
-
-1. Abre `src/data/skills.ts`
-2. Añade un nuevo objeto al array `skills`:
-
-```typescript
-{
-  id: 'nueva-habilidad',
-  name: 'Nombre de la habilidad',
-  category: 'Categoría',
-  description: 'Descripción',
-  availableTo: ['valeria', 'lucia'], // IDs de agentes
-  isEnabled: true,
-}
-```
-
-### Crear Nuevas Entidades
-
-Para añadir un nuevo tipo de entidad:
-
-1. Define la interfaz en `src/data/schema.ts`
-2. Crea un nuevo archivo en `src/data/` (ej: `src/data/newEntity.ts`)
-3. Exporta el array de datos y funciones de consulta
-4. Importa y usa en los componentes necesarios
-
-## 🎨 Tecnologías
+## 📊 Tecnologías
 
 - **React 18** - Biblioteca de UI
 - **TypeScript** - Tipado estático
-- **Vite** - Build tool y dev server
-- **Tailwind CSS** - Framework CSS utility-first
-- **lucide-react** - Iconos modernos y consistentes
+- **Vite** - Build tool ultrarrápido
+- **Tailwind CSS** - Framework CSS
+- **React Router** - Routing
+- **Zustand** - State management con persistencia
+- **Framer Motion** - Animaciones
+- **Sonner** - Notificaciones toast
+- **lucide-react** - Iconos
 
-## 📊 Estado del Proyecto
+## ✅ Verificación
 
-✅ Proyecto compila sin errores  
-✅ Sin referencias a marcas prohibidas  
-✅ "Agentalia" aparece correctamente en todo el proyecto  
-✅ Base de datos interna completamente tipada  
-✅ Catálogo de agentes extensible  
-✅ Componentes modulares y reutilizables  
-✅ Diseño responsive y accesible  
-✅ Tema claro con colores especificados
+- ✅ Proyecto compila sin errores (378 KB JS, 36 KB CSS)
+- ✅ Sin referencias a marcas prohibidas
+- ✅ "Agentalia" aparece correctamente en todo el proyecto
+- ✅ Base de datos interna completamente funcional
+- ✅ CRUD completo para todas las entidades
+- ✅ Persistencia en localStorage
+- ✅ Routing funcional con 9 vistas
+- ✅ Command palette con búsqueda global
+- ✅ Theme toggle claro/oscuro
+- ✅ Animaciones fluidas
+- ✅ Diseño cyberpunk futurista
+- ✅ Preparado para Vercel
+
+## 🎯 Funcionalidades Operativas
+
+### Tareas (CRUD Completo)
+- Crear nuevas tareas con formulario
+- Editar tareas existentes
+- Eliminar tareas
+- Cambiar estado (pending, in-progress, completed)
+- Asignar a agentes
+- Prioridades (low, medium, high, critical)
+- Fechas de vencimiento
+
+### Agentes
+- Catálogo de 6 agentes futuristas
+- Roles especializados
+- Avatares con emojis
+- Estados (active, idle, processing)
+- Habilidades asignadas
+- Visualización orbital animada
+
+### Objetivos
+- Seguimiento de progreso
+- Resultados clave
+- Asignación a agentes
+- Fechas objetivo
+- Estados (not-started, in-progress, completed)
+
+### Rutinas
+- Automatizaciones programadas
+- Frecuencias (hourly, daily, weekly, monthly)
+- Activar/desactivar
+- Última ejecución y próxima ejecución
+
+### Command Palette
+- Búsqueda global en toda la base de datos
+- Navegación rápida entre vistas
+- Atajos de teclado completos
+- Fuzzy search
 
 ## 📝 Licencia
 
-Este proyecto es una implementación de dashboard para Agentalia.
+MIT License - Libre para uso comercial y personal.
 
 ---
 
-**Desarrollado con ❤️ para Agentalia**
+**Desarrollado con ❤️ para Agentalia - AI Agent Platform**

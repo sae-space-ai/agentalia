@@ -1,11 +1,5 @@
 // ============================================================================
-// AGENTALIA DATABASE SCHEMA
-// ============================================================================
-// This file defines the complete data model for the Agentalia platform.
-// All entities are typed and extensible.
-
-// ============================================================================
-// CORE ENTITIES
+// AGENTALIA DATABASE SCHEMA - FUTURISTIC EDITION
 // ============================================================================
 
 export interface Agent {
@@ -14,16 +8,16 @@ export interface Agent {
   role: string;
   avatar: string;
   color: string;
+  glowColor: string;
   description?: string;
-  status: 'active' | 'idle' | 'processing';
+  status: 'active' | 'idle' | 'processing' | 'offline';
   isOrchestrator?: boolean;
   skills?: string[];
-  tasks?: string[]; // Task IDs
-  objectives?: string[]; // Objective IDs
-  routines?: string[]; // Routine IDs
-  complements?: string[]; // Complement IDs
-  automations?: string[]; // Automation IDs
-  utilities?: string[]; // Utility IDs
+  tasks?: string[];
+  objectives?: string[];
+  routines?: string[];
+  createdAt: string;
+  lastActive?: string;
 }
 
 export interface Task {
@@ -31,11 +25,12 @@ export interface Task {
   title: string;
   description: string;
   status: 'pending' | 'in-progress' | 'completed' | 'cancelled';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
-  assignedTo: string; // Agent ID
+  priority: 'low' | 'medium' | 'high' | 'critical';
+  assignedTo: string;
   createdAt: string;
   dueDate?: string;
   completedAt?: string;
+  tags?: string[];
 }
 
 export interface Objective {
@@ -44,21 +39,23 @@ export interface Objective {
   description: string;
   status: 'not-started' | 'in-progress' | 'completed';
   targetDate?: string;
-  progress: number; // 0-100
-  assignedTo: string; // Agent ID
+  progress: number;
+  assignedTo: string;
   keyResults?: string[];
+  createdAt: string;
 }
 
 export interface Routine {
   id: string;
   name: string;
   description: string;
-  frequency: 'daily' | 'weekly' | 'monthly' | 'custom';
+  frequency: 'hourly' | 'daily' | 'weekly' | 'monthly' | 'custom';
   schedule?: string;
-  assignedTo: string; // Agent ID
+  assignedTo: string;
   isActive: boolean;
   lastRun?: string;
   nextRun?: string;
+  createdAt: string;
 }
 
 export interface Skill {
@@ -66,8 +63,9 @@ export interface Skill {
   name: string;
   category: string;
   description: string;
-  availableTo: string[]; // Agent IDs
+  availableTo: string[];
   isEnabled: boolean;
+  level: 'basic' | 'advanced' | 'expert';
 }
 
 export interface Complement {
@@ -75,7 +73,7 @@ export interface Complement {
   name: string;
   type: 'integration' | 'addon' | 'extension';
   description: string;
-  assignedTo: string; // Agent ID
+  assignedTo: string;
   isActive: boolean;
   config?: Record<string, any>;
 }
@@ -86,9 +84,10 @@ export interface Automation {
   trigger: string;
   action: string;
   description: string;
-  assignedTo: string; // Agent ID
+  assignedTo: string;
   isActive: boolean;
   lastTriggered?: string;
+  executionCount: number;
 }
 
 export interface Utility {
@@ -96,8 +95,9 @@ export interface Utility {
   name: string;
   category: 'tool' | 'resource' | 'template';
   description: string;
-  assignedTo: string; // Agent ID
+  assignedTo: string;
   isAvailable: boolean;
+  usageCount: number;
 }
 
 export interface File {
@@ -107,7 +107,8 @@ export interface File {
   size: number;
   space: string;
   uploadedAt: string;
-  uploadedBy: string; // Agent ID
+  uploadedBy: string;
+  tags?: string[];
 }
 
 export interface Contact {
@@ -117,14 +118,17 @@ export interface Contact {
   phone?: string;
   company?: string;
   lastInteraction?: string;
-  interactedBy: string[]; // Agent IDs
+  interactedBy: string[];
+  notes?: string;
 }
 
 export interface App {
   id: string;
   name: string;
   description: string;
-  createdBy: string; // Agent ID
+  createdBy: string;
   createdAt: string;
   status: 'draft' | 'published' | 'archived';
+  version: string;
+  downloads?: number;
 }

@@ -3,18 +3,18 @@ import { Complement, Automation, Utility, File, Contact, App } from './schema';
 export const complements: Complement[] = [
   {
     id: 'comp-1',
-    name: 'Google Analytics',
+    name: 'Neural Analytics Suite',
     type: 'integration',
-    description: 'Integración con Google Analytics para métricas web',
-    assignedTo: 'elena',
+    description: 'Suite avanzada de análisis con IA',
+    assignedTo: 'cortex',
     isActive: true,
   },
   {
     id: 'comp-2',
-    name: 'Mailchimp',
+    name: 'Quantum Messaging Hub',
     type: 'integration',
-    description: 'Plataforma de email marketing',
-    assignedTo: 'carmen',
+    description: 'Hub de mensajería cuántica',
+    assignedTo: 'aether',
     isActive: true,
   },
 ];
@@ -22,24 +22,26 @@ export const complements: Complement[] = [
 export const automations: Automation[] = [
   {
     id: 'auto-1',
-    name: 'Auto-respuesta a leads',
+    name: 'Auto-respuesta inteligente',
     trigger: 'Nuevo lead recibido',
-    action: 'Enviar email de bienvenida',
-    description: 'Respuesta automática cuando se recibe un nuevo lead',
-    assignedTo: 'carmen',
+    action: 'Enviar email personalizado',
+    description: 'Respuesta automática con contenido adaptado',
+    assignedTo: 'aether',
     isActive: true,
     lastTriggered: '2024-01-16T14:30:00Z',
+    executionCount: 156,
   },
 ];
 
 export const utilities: Utility[] = [
   {
     id: 'util-1',
-    name: 'Generador de informes',
+    name: 'Generador de informes cuántico',
     category: 'tool',
     description: 'Herramienta para generar informes automatizados',
-    assignedTo: 'daniel',
+    assignedTo: 'cortex',
     isAvailable: true,
+    usageCount: 89,
   },
 ];
 
@@ -49,18 +51,20 @@ export const files: File[] = [
     name: 'Informe Q4 2023.pdf',
     type: 'pdf',
     size: 2456789,
-    space: 'Finanzas',
+    space: 'Analytics',
     uploadedAt: '2024-01-10T10:00:00Z',
-    uploadedBy: 'daniel',
+    uploadedBy: 'cortex',
+    tags: ['report', 'quarterly'],
   },
   {
     id: 'file-2',
-    name: 'Estrategia Marketing 2024.docx',
+    name: 'Estrategia Neural 2024.docx',
     type: 'docx',
     size: 1234567,
-    space: 'Marketing',
+    space: 'Strategy',
     uploadedAt: '2024-01-12T11:00:00Z',
-    uploadedBy: 'valeria',
+    uploadedBy: 'nexus',
+    tags: ['strategy', 'planning'],
   },
 ];
 
@@ -69,28 +73,31 @@ export const contacts: Contact[] = [
     id: 'contact-1',
     name: 'María García',
     email: 'maria@empresa.com',
-    company: 'Empresa ABC',
+    company: 'TechCorp',
     lastInteraction: '2024-01-15T16:00:00Z',
-    interactedBy: ['carmen', 'elena'],
+    interactedBy: ['aether', 'vanguard'],
+    notes: 'Cliente premium',
   },
   {
     id: 'contact-2',
     name: 'Juan Pérez',
     email: 'juan@startup.com',
-    company: 'Startup XYZ',
+    company: 'InnovateLab',
     lastInteraction: '2024-01-14T10:00:00Z',
-    interactedBy: ['carmen'],
+    interactedBy: ['aether'],
   },
 ];
 
 export const apps: App[] = [
   {
     id: 'app-1',
-    name: 'Dashboard de Métricas',
-    description: 'Aplicación para visualizar métricas en tiempo real',
-    createdBy: 'elena',
+    name: 'Neural Dashboard',
+    description: 'Dashboard de métricas en tiempo real con IA',
+    createdBy: 'vanguard',
     createdAt: '2024-01-08T09:00:00Z',
     status: 'published',
+    version: '2.1.0',
+    downloads: 1247,
   },
 ];
 
