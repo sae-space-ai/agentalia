@@ -1,12 +1,4 @@
-export interface Agent {
-  id: string;
-  name: string;
-  role: string;
-  avatar: string;
-  color: string;
-  description?: string;
-  isOrchestrator?: boolean;
-}
+import { Agent } from './schema';
 
 export const agents: Agent[] = [
   {
@@ -15,6 +7,11 @@ export const agents: Agent[] = [
     role: 'Agente de Contenido Curioso',
     avatar: '📝',
     color: 'bg-green-100 text-green-600',
+    status: 'active',
+    skills: ['content-creation', 'copywriting', 'social-media'],
+    tasks: ['task-1', 'task-2'],
+    objectives: ['obj-1'],
+    routines: ['routine-1'],
   },
   {
     id: 'lucia',
@@ -22,6 +19,10 @@ export const agents: Agent[] = [
     role: 'Agente de Investigación',
     avatar: '🔍',
     color: 'bg-purple-100 text-purple-600',
+    status: 'active',
+    skills: ['research', 'data-analysis', 'market-research'],
+    tasks: ['task-3'],
+    objectives: ['obj-2'],
   },
   {
     id: 'elena',
@@ -29,6 +30,10 @@ export const agents: Agent[] = [
     role: 'Agente de Éxito Multicanal',
     avatar: '📱',
     color: 'bg-orange-100 text-orange-600',
+    status: 'active',
+    skills: ['multi-channel', 'customer-success', 'campaign-management'],
+    tasks: ['task-4', 'task-5'],
+    routines: ['routine-2'],
   },
   {
     id: 'carmen',
@@ -36,6 +41,9 @@ export const agents: Agent[] = [
     role: 'Agente de Comunicación',
     avatar: '💬',
     color: 'bg-blue-100 text-blue-600',
+    status: 'idle',
+    skills: ['communication', 'email-marketing', 'messaging'],
+    tasks: ['task-6'],
   },
   {
     id: 'daniel',
@@ -43,6 +51,9 @@ export const agents: Agent[] = [
     role: 'Agente de Análisis Financiero',
     avatar: '💰',
     color: 'bg-pink-100 text-pink-600',
+    status: 'idle',
+    skills: ['financial-analysis', 'reporting', 'budgeting'],
+    objectives: ['obj-3'],
   },
   {
     id: 'maestro',
@@ -50,52 +61,21 @@ export const agents: Agent[] = [
     role: 'Orquestador de agentes',
     avatar: '🎼',
     color: 'bg-gray-900 text-white',
+    status: 'active',
     isOrchestrator: true,
     description: 'The Maestro aprovecha la experiencia de Agentalia para elegir a mano los mejores agentes y habilidades que ayuden a crecer tu negocio.',
+    skills: ['orchestration', 'agent-coordination', 'task-assignment'],
   },
 ];
 
-export const quickAccessItems = [
-  {
-    id: 'tasks',
-    icon: 'CheckCircle',
-    title: 'Tareas',
-    subtitle: '02',
-    badge: null,
-  },
-  {
-    id: 'goals',
-    icon: 'TrendingUp',
-    title: 'Objetivos',
-    subtitle: 'Aún no hay objetivos',
-    badge: null,
-  },
-  {
-    id: 'routines',
-    icon: 'Zap',
-    title: 'Rutinas',
-    subtitle: '01',
-    badge: null,
-  },
-  {
-    id: 'files',
-    icon: 'FileText',
-    title: 'Archivos',
-    subtitle: '20 archivos · 7 espacios',
-    badge: 'Próximamente',
-  },
-  {
-    id: 'apps',
-    icon: 'Grid3x3',
-    title: 'Apps',
-    subtitle: 'Apps que tus agentes crearon en todos tus espacios',
-    badge: null,
-  },
-  {
-    id: 'contacts',
-    icon: 'Users',
-    title: 'Contactos',
-    subtitle: 'Los contactos con los que tus agentes han estado en ...',
-    badge: null,
-  },
-];
+export const getAgentById = (id: string): Agent | undefined => {
+  return agents.find(agent => agent.id === id);
+};
+
+export const getAgentsByStatus = (status: Agent['status']): Agent[] => {
+  return agents.filter(agent => agent.status === status);
+};
+
+export const getOrchestrator = (): Agent | undefined => {
+  return agents.find(agent => agent.isOrchestrator);
+};

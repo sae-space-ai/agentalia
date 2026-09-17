@@ -8,22 +8,72 @@ import {
   ChevronRight,
   Lightbulb,
 } from 'lucide-react';
-import { quickAccessItems } from '../data/agents';
-
-const iconMap: Record<string, any> = {
-  CheckCircle,
-  TrendingUp,
-  Zap,
-  FileText,
-  Grid3x3,
-  Users,
-};
+import { getPendingTasksCount } from '../data/tasks';
+import { getObjectivesCount } from '../data/objectives';
+import { getActiveRoutinesCount } from '../data/routines';
+import { getFilesCount, getContactsCount, getAppsCount } from '../data/entities';
 
 export default function QuickAccessGrid() {
+  const pendingTasks = getPendingTasksCount();
+  const objectivesCount = getObjectivesCount();
+  const activeRoutines = getActiveRoutinesCount();
+  const filesCount = getFilesCount();
+  const contactsCount = getContactsCount();
+  const appsCount = getAppsCount();
+
+  const quickAccessItems = [
+    {
+      id: 'tasks',
+      icon: CheckCircle,
+      title: 'Tareas',
+      subtitle: pendingTasks > 0 ? `${pendingTasks.toString().padStart(2, '0')}` : '00',
+      badge: null,
+    },
+    {
+      id: 'goals',
+      icon: TrendingUp,
+      title: 'Objetivos',
+      subtitle: objectivesCount > 0 ? `${objectivesCount} en progreso` : 'Aún no hay objetivos',
+      badge: null,
+    },
+    {
+      id: 'routines',
+      icon: Zap,
+      title: 'Rutinas',
+      subtitle: activeRoutines > 0 ? `${activeRoutines.toString().padStart(2, '0')}` : '00',
+      badge: null,
+    },
+    {
+      id: 'files',
+      icon: FileText,
+      title: 'Archivos',
+      subtitle: `${filesCount} archivos · 7 espacios`,
+      badge: 'Próximamente',
+    },
+    {
+      id: 'apps',
+      icon: Grid3x3,
+      title: 'Apps',
+      subtitle: appsCount > 0 
+        ? `${appsCount} apps creadas por tus agentes`
+        : 'Apps que tus agentes crearon en todos tus espacios',
+      badge: null,
+    },
+    {
+      id: 'contacts',
+      icon: Users,
+      title: 'Contactos',
+      subtitle: contactsCount > 0
+        ? `${contactsCount} contactos gestionados`
+        : 'Los contactos con los que tus agentes han estado en ...',
+      badge: null,
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {quickAccessItems.map((item) => {
-        const Icon = iconMap[item.icon];
+        const Icon = item.icon;
         return (
           <div
             key={item.id}

@@ -1,13 +1,16 @@
 import { agents } from '../data/agents';
 
 export default function TeamOrbit() {
+  const regularAgents = agents.filter(a => !a.isOrchestrator);
+  const enabledCount = 14;
+
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold text-gray-900">Tu equipo · {agents.length}</h2>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <span>14 habilitados</span>
+            <span>{enabledCount} habilitados</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -31,8 +34,8 @@ export default function TeamOrbit() {
         <div className="absolute w-[380px] h-[380px] border-2 border-dashed border-gray-200 rounded-full" />
 
         {/* Agent nodes on orbits */}
-        {agents.map((agent, index) => {
-          const angle = (index * (360 / agents.length)) * (Math.PI / 180);
+        {regularAgents.map((agent, index) => {
+          const angle = (index * (360 / regularAgents.length)) * (Math.PI / 180);
           const radius = index % 2 === 0 ? 100 : index % 3 === 0 ? 150 : 190;
           const x = Math.cos(angle) * radius;
           const y = Math.sin(angle) * radius;
